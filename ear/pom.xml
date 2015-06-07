@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>unicoproject</artifactId>
+		<groupId>au.unico</groupId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>unicoear</artifactId>
+	<packaging>ear</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>au.unico</groupId>
+			<artifactId>unicoweb</artifactId>
+			<type>war</type>
+			 <version>1.0.0</version>
+		</dependency>
+                <dependency>
+			<groupId>au.unico</groupId>
+			<artifactId>unicoejb</artifactId>
+			<type>ejb</type>
+			 <version>1.0.0</version>
+		</dependency>
+                  <dependency>
+                        <groupId>org.glassfish.jersey.media</groupId>
+                        <artifactId>jersey-media-moxy</artifactId>
+                        <version>2.0</version>
+                  </dependency>
+
+	</dependencies>
+	<build>
+		<finalName>${project.parent.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				 <version>2.4</version>
+				<configuration>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>au.unico</groupId>
+							<artifactId>unicoweb</artifactId>
+							<contextRoot>/unicoweb</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+    <name>unicoear</name>
+</project>
