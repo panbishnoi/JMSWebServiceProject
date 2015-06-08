@@ -11,45 +11,5 @@
 		<module>web</module>
 		<module>ear</module>
 	</modules>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-		<version.jboss.spec.javaee.6.0>3.0.2.Final-redhat-13</version.jboss.spec.javaee.6.0>
-		<version.ear.plugin>2.8</version.ear.plugin>
-		<version.ejb.plugin>2.3</version.ejb.plugin>
-		<version.war.plugin>2.1.1</version.war.plugin>
-		<maven.compiler.target>1.7</maven.compiler.target>
-		<maven.compiler.source>1.7</maven.compiler.source>
-	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>au.unico</groupId>
-				<artifactId>unicoejb</artifactId>
-				<version>${project.version}</version>
-				<type>ejb</type>
-			</dependency>
-			<dependency>
-				<groupId>au.unico</groupId>
-				<artifactId>unicoweb</artifactId>
-				<version>${project.version}</version>
-				<type>war</type>
-				<scope>compile</scope>
-			</dependency>
-			
-		</dependencies>
-	</dependencyManagement>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>${version.jboss.maven.plugin}</version>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
     <name>unicoproject</name>
 </project>

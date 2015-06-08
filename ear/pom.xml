@@ -22,12 +22,6 @@
 			<type>ejb</type>
 			 <version>1.0.0</version>
 		</dependency>
-                  <dependency>
-                        <groupId>org.glassfish.jersey.media</groupId>
-                        <artifactId>jersey-media-moxy</artifactId>
-                        <version>2.0</version>
-                  </dependency>
-
 	</dependencies>
 	<build>
 		<finalName>${project.parent.artifactId}</finalName>

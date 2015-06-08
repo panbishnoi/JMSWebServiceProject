@@ -18,8 +18,13 @@
 		</dependency>
                  <dependency>
                    <groupId>org.apache.activemq</groupId>
-                   <artifactId>activemq-core</artifactId>
-                   <version>5.7.0</version>
+                   <artifactId>activemq-broker</artifactId>
+                   <version>5.11.1</version>
+                 </dependency>
+                  <dependency>
+                   <groupId>org.apache.activemq</groupId>
+                   <artifactId>activemq-client</artifactId>
+                   <version>5.11.1</version>
                  </dependency>
 	</dependencies>
 	<build>
@@ -30,8 +35,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
             <plugin>
