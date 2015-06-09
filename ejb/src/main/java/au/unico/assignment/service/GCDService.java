@@ -38,8 +38,8 @@ public class GCDService {
 
 	private InitialContext initialContext;
 
-	@Inject
-	private EnteredNumberDao numberDao;
+        @Inject
+	private EnteredNumberDao enteredNumberDao;
 
 	@Inject
 	private GreatestCommonDivisorDao greatestCommonDivisorDao;
@@ -58,7 +58,7 @@ public class GCDService {
 	@PreDestroy
 	public void destroyBean() {
 		try {
-                    numberDao = null;
+                    enteredNumberDao = null;
                     greatestCommonDivisorDao = null;	
                     initialContext.close();
 		} catch (Exception e) {
@@ -88,7 +88,7 @@ public class GCDService {
                 producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);            
                 producer.send(message); 
                 producer.close();
-                numberDao.saveNumber(i);
+                enteredNumberDao.saveNumber(i);
                 }
                 }catch(Exception ex){
                        throw new JMSException(ex.getMessage());
@@ -142,7 +142,7 @@ public class GCDService {
 	 */
 	public List<Integer> getNumbersSuccesfullyAddedToJMSQueue() {
 
-		List<EnteredNumber> numbers = numberDao.findAll();
+		List<EnteredNumber> numbers = enteredNumberDao.findAll();
 
 		List<Integer> submitedNumbers = new ArrayList<Integer>();
 
@@ -218,4 +218,6 @@ public class GCDService {
 		}
 		return sum;
 	}
+        
+      
 }
