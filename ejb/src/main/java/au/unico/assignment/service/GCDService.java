@@ -33,17 +33,25 @@ import au.unico.assignment.model.EnteredNumber;
  */
 @Stateless
 public class GCDService {
-
-	ConnectionFactory connectionFactory;
+    
+    	ConnectionFactory connectionFactory;
 
 	private InitialContext initialContext;
 
-        @Inject
+       
 	private EnteredNumberDao enteredNumberDao;
+        @Inject
+        public void setEnteredNumberDao(
+          final EnteredNumberDao enteredNumberDao) {
+          this.enteredNumberDao = enteredNumberDao;
+        }
 
-	@Inject
 	private GreatestCommonDivisorDao greatestCommonDivisorDao;
-
+        @Inject
+        public void setGreatestCommonDivisorDao(
+          final GreatestCommonDivisorDao greatestCommonDivisorDao) {
+          this.greatestCommonDivisorDao = greatestCommonDivisorDao;
+        }
 	@PostConstruct
 	public void initialize() {
 
