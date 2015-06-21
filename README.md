@@ -1,4 +1,4 @@
-Application - unicoproject
+Application - JMSWebServiceProject
 
 Environment:
 -------------
